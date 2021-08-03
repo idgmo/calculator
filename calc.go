@@ -34,7 +34,7 @@ func main() {
 	var cont string
 
 	for cont != "q" {
-		fmt.Println("Please enter an equation using one of the following operators: +, -, /, %, *:")
+		fmt.Println("Please enter an expression using spaces one of the following operators: +, -, /, %, *:")
 		if cont == "" {
 			fmt.Println("Example: 255 * 22")
 		}
@@ -67,6 +67,11 @@ func main() {
 		fmt.Printf("%d %s %d = %d\n", num1, op, num2, output)
 		fmt.Println("Press any letter to clear.")
 		fmt.Println("Press \"q\" to quit.")
+
+		num1 = 0
+		op = ""
+		num2 = 0
 		fmt.Scan(&cont)
+
 	}
 }
