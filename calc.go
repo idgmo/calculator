@@ -9,8 +9,33 @@ import (
 	"strings"
 )
 
-func add(a, b int) int {
-	return a + b
+func sum(a string) int {
+	if a == "" {
+		return 0
+	}
+	
+	num := strings.Split(a, ",")
+
+	num1 := ""
+	if num[0] != "" {
+		num1 = num[0]
+	} else {
+		num1 = ""
+	}
+
+	num2 := ""
+	if num[1] != "" {
+		num2 = num[1]
+	} else {
+		num2 = ""
+	}
+
+	value1, _ := strconv.Atoi(num1)
+	value2, _ := strconv.Atoi(num2)
+
+	total := value1 + value2
+
+	return total
 }
 
 func subtract(a, b int) int {
@@ -87,7 +112,7 @@ func main() {
 			output := 0
 			switch op {
 			case "+":
-				output = add(num1, num2)
+				output = sum("")
 			case "-":
 				output = subtract(num1, num2)
 
